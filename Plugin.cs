@@ -72,11 +72,12 @@ namespace PartyListLayout {
         public Plugin() {
             PluginInterface.Create<PartyListLayout>();
             Instance = this;
-            Task.Run(FFXIVClientStructs.Resolver.Initialize)
-                .ContinueWith((_) => {
-                    if (isDisposed) return;
-                    Init();
-            });
+            Init();
+            ////Task.Run(FFXIVClientStructs.Resolver.Initialize)
+            ////    .ContinueWith((_) => {
+            ////        if (isDisposed) return;
+            ////        Init();
+            ////});
         }
 
         public void OnConfigCommandHandler(string command, string args) {
